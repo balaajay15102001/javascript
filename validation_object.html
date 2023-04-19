@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>
+        Validation
+    </title>
+</head>
+
+<body>
+    <h1>
+       Object Validation
+    </h1>
+    <p id="result">
+    </p>
+    <br>
+    <script>
+        function object(v)
+        { 
+            var datatype = typeof v;
+            if(datatype === 'function' || datatype === 'object' && !! v ){
+                    return true
+            }
+            else{
+                return false
+            }
+       }
+        document.getElementById("result").innerHTML=object({value: 1});
+    </script>
+</body>
+
+</html>

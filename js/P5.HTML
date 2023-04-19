@@ -1,0 +1,119 @@
+<!-- Create a class through the constructor invocation pattern. BookList = function() {}
+BookLists should have the following properties:
+Number of books marked as read (eg, BookList.booksRead)
+Number of books marked not read yet
+Next book to read(book object)(eg, BookList.nextBook() - returns a Book)
+Current book being read (book object)
+Last book read(book object)
+An array of all the Books (eg BookList.bookShelf - is an array.)
+Create another class called Book. Book = function() {}
+Each book should have several properties:
+Title, Genre, Author
+Read (true or false)
+Read date, can be blank, otherwise needs to be a JS Date() object
+Every Booklist should have a few methods:
+.add(book) - should add a book to the books list.
+.finishCurrentBook()
+Should mark the book that is currently being read as read
+Give it a read date of new Date(Date.now())
+Change the .lastBook property to be the book that just got finished
+Change the .currentBook property to point to what's in the .nextBook property
+Change the .nextBook property to be the first unread book you find in the list of books
+Booklists and Books might need more methods than that. Try to think of more that might be useful. -->
+<html>
+    <body>
+        <script>
+            class books{
+                constructor(e){
+                  this.book_list=e;
+                }
+            add(name,author){   
+                this.book_list[name+"_"+author]='no';
+                console.log(this.book_list);
+            }
+           read(){
+            for (const [key, value] of Object.entries(this.book_list)) {
+                let val=value;
+                if(val=="yes"){
+                    console.log(`${key}`);
+                }
+            }
+           }
+           unread(){
+            for (const [key, value] of Object.entries(this.book_list)) {
+                let val=value;
+                if(val=="no"){
+                    console.log(`${key}`);
+                }
+            }
+           }
+           current_book(){
+            let count=0;
+            let objectLength = Object.keys(this.book_list).length;
+            let curr = Math.floor(Math.random() * objectLength);
+            for (const [key, value] of Object.entries(this.book_list)) {
+                let val=curr;
+                if(val==count){
+                    console.log(`${key}`);
+                }
+                count++;
+            }
+           }
+           next_book(){
+            let count=0;
+            let objectLength = Object.keys(this.book_list).length;
+            let curr = Math.floor(Math.random() * objectLength);
+            for (const [key, value] of Object.entries(this.book_list)) {
+                let val=curr;
+                if(val==count){
+                    console.log(`${key}`);
+                }
+                count++;
+            }
+        }
+        } 
+        const onClick = (event) => {
+            let val=event.srcElement.value;
+             const obj1 = {
+                Tamil_bharathi_poet: 'yes',
+                English_shakesphere_poem: 'no',
+                cinderlla_waltDisney_story:'yes',
+                popoye_bala_comic:'no'
+        };
+            const Shelf=new books(obj1);
+            if(val=="current"){
+                Shelf.current_book();
+            }
+            else if(val=="read"){
+                Shelf.read();
+            }
+            else if(val=="next_book"){
+                Shelf.next_book();
+            }
+            else if(val=="unread"){
+                Shelf.unread();
+            }
+            else if(val=="add"){
+                let name=document.getElementById("name").value;
+                let author=document.getElementById("author").value;
+                Shelf.add(name,author);
+            }   
+        }
+        window.addEventListener('click', onClick);
+        </script>
+        <div style="border:3px solid black;padding: 10px;">
+            <label>Book name:</label>
+            <input type="text" placeholder="enter the book name" id="name" required><br><br>
+            <label>Author name:</label>
+            <input type="text" placeholder="enter the author name" id="author" required><br><br>
+            <input type="button" class="res" value="add" onclick="onClick" id="buttons"><br><br>
+        </div>
+        <br><br>
+
+        <input type="button" class="res" value="read" onclick="onClick" id="buttons">
+        <input type="button" class="res" value="unread" onclick="onClick" id="buttons">
+        <input type="button" class="res" value="current" onclick="onClick" id="buttons">
+        <input type="button" class="res" value="next_book" onclick="onClick" id="buttons">
+     
+    </body>
+</html>

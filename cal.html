@@ -1,0 +1,151 @@
+<html>
+<head>
+  <script src="jquery-3.6.1.min.js"></script>
+
+    <style>
+body {
+  background-color: darkkhaki;
+}
+
+p {
+  margin: 0;
+   position: relative;
+  left: 5%;
+}
+
+.calculator {
+  position: relative;
+  margin: 1em auto;
+  padding: 1em 0;
+  display: block-inline;
+  width: 350px;
+  background-color: rgb(98, 95, 95);
+  border-radius: 25px;
+  box-shadow: 5px 5px 15px 3px #111;
+  font-family: 'Oxygen';
+}
+
+.calc-row {
+  text-align: center;
+}
+
+.calc-row div#screen {
+  font-family: Droid Sans Mono;
+  display: table;
+  width: 85%;
+  background-color: #aaa;
+  text-align: right;
+  font-size: 2em;
+  min-height: 1.2em;
+  margin-left: 0.5em;
+  padding-right: 0.5em;
+  border: 1px solid #888;
+  color: #333;
+}
+
+.calc-row div {
+  text-align: center;
+  display: inline-block;
+  font-weight: bold;
+  border: 1px solid #555;
+  background-color: #eee;
+  padding: 20px 10px;
+  margin: 7px 5px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 1px 1px #222;
+  width: 50px;
+}
+
+.calc-row div.zero {
+  width: 112px;
+}
+
+.calc-row div.zero {
+  margin-right: 6px;
+}
+
+.calc-row div.c {
+  width: 112px;
+}
+
+.calc-row div.c {
+  margin-right: 6px;
+}
+
+</style>
+
+</head>
+<body>
+<div class="calculator">
+  <p>Bala the Great</p>
+  <div class="calc-row">
+    <div id="screen"></div>
+  </div>
+  
+  <div class="calc-row">
+    <div class="clear" onclick="func('C')">C</div>
+    <div class="clear" onclick="func('C')">CE</div>
+    <div class="button" onclick="func('%')">%</div>
+  </div>
+  
+  <div class="calc-row">
+    <div class="button" onclick="func('7')">7</div>
+    <div class="button" onclick="func('8')">8</div>
+    <div class="button" onclick="func('9')">9</div>
+    <div class="button"  onclick="func('/')">/</div>
+  </div>
+  
+  <div class="calc-row">
+    <div class="button" onclick="func('4')">4</div>
+    <div class="button" onclick="func('5')">5</div>
+    <div class="button" onclick="func('6')">6</div>
+    <div class="button" onclick="func('*')">x</div>
+  </div>
+  
+  <div class="calc-row">
+    <div class="button" onclick="func('1')">1</div>
+    <div class="button" onclick="func('2')">2</div>
+    <div class="button" onclick="func('3')">3</div>
+    <div class="button" onclick="func('-')">-</div>
+  </div>
+  
+  <div class="calc-row">
+    <div class="button" onclick="func('0')">0</div>
+    <div class="button" onclick="func('+')">+</div>
+    <div class="button equal" onclick="func('=')">=</div>
+  </div>
+</div>
+<script>
+var arr=[];
+function func(e){
+     var a =""
+    if(e ==='='){
+        console.log(arr);
+        for (let index = 0; index < arr.length; index++) {
+            a+=arr[index]
+        }
+        //console.log(a)
+        console.log(eval(a))
+         document.getElementById("screen").innerHTML=eval(a);
+
+         while(arr.length>0){
+                arr.pop();
+         }
+         console.log(arr);
+       
+    }
+    else{
+        arr.push(e);
+        document.getElementById("screen").innerHTML=e;
+        console.log(e);
+       
+        // console.log(arr)
+    }
+    if(e==='C'){
+        arr=[];
+        document.getElementById("screen").innerHTML=" ";
+    }
+}
+</script>
+</body>
+</html>

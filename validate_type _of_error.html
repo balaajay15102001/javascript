@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>
+        Validation
+    </title>
+</head>
+
+<body>
+    <h1>
+       Error Validation
+    </h1>
+    <p id="result">
+    </p>
+    <br>
+    <script>
+        function Errors(variable) {
+            if (variable instanceof Error) {
+                console.log("The given value is instance object of error..!");
+            }
+            else {
+                console.log("The given value is not instance object of error..!")
+            }
+        }
+        function Errors_func(v){
+            if(v && v.stack && v.message){
+                console.log("Errors");
+                document.getElementById("result").innerHTML="Error"
+            }
+            else{
+                console.log("not error");
+                document.getElementById("result").innerHTML="Not an Error"
+            }
+        }
+
+        Errors("very");
+        Errors(true);
+        Errors(new Error("bala"))
+        Errors_func(new Error("ReferenceError"));
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Document</title>
+</head>
+<body>
+    <h1>Encoding the String</h1>
+    <label>Enter the String</label>
+    <input type="text" id="String1" size="15" placeholder="Enter something">&nbsp;&nbsp;
+   <button onclick="func()">submit</button><br><br>
+    <div style="border:1px solid black;width:auto;">
+        <h1 id="result"> </h1>
+    </div>
+    <script>
+        function func(){
+            var str1=document.getElementById("String1").value;
+            console.log(str1);
+           document.getElementById("result").innerHTML=window.btoa(str1);
+        }
+    </script>
+</body>
+</html>

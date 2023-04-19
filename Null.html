@@ -1,0 +1,27 @@
+<html>
+<body>
+
+<h1>Validate the Null Value</h1>
+
+<p>Click the button to check the value is Null or not
+</p>
+
+<button onclick="myFunction()">Try it</button><br>
+
+<p id="result"></p>
+
+<script>
+function myFunction() {
+  let value = prompt("Please enter something");
+  if (value=='null' || value=="" || value=="Null") {
+    document.getElementById("result").innerHTML ="There is Null value";
+}
+else{
+    
+    document.getElementById("result").innerHTML ="There is not a Null value";
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Program to Check if a String contains a subString</h1>
+    <label>Enter the String</label>
+    <input type="text" id="String1" size="15" placeholder="Enter something">&nbsp;&nbsp;<br><br>
+    <label>Enter the Sub String to check</label>
+    <input type="text" id="String2" size="15" placeholder="Enter something">
+    <button onclick="func()">submit</button><br><br>
+    <div style="border:1px solid black;width:auto;">
+        <h1 id="result"> </h1>
+    </div>
+    <script>
+        function func(){
+            var str1=document.getElementById("String1").value;
+            console.log(str1);
+            var str2=document.getElementById("String2").value;
+            console.log(str2);
+            
+            if(str1.includes(str2)){
+                document.getElementById("result").innerHTML="The Element have a substring and the sub string is:"+str2;
+            }
+            else{
+                document.getElementById("result").innerHTML="There is no Substring in the given string"
+            }
+        }
+    </script>
+</body>
+</html>

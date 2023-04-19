@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Document</title>
+</head>
+<body>
+    <h1>Validate the given value is boolean or not</h1>
+    <label>Enter the boolean value</label>
+    <input type="text" id="String1" size="15" placeholder="Enter something">&nbsp;&nbsp;
+   <button onclick="func()">submit</button><br><br>
+    <div style="border:1px solid black;width:auto;">
+        <h1 id="result"> </h1>
+    </div>
+    <script>
+        function func(){
+            const str1=document.getElementById("String1").value;
+            console.log(str1);
+            if(str1 === "true" || str1 === "false"){
+
+                document.getElementById("result").innerHTML="The given value is boolean";
+            }
+            else{
+                
+                document.getElementById("result").innerHTML="The given value is  not boolean";
+            }
+        }
+    </script>
+</body>
+</html>

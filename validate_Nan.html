@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Validate the Nan Value</h1>
+
+<p>Click the button to check the value is NaN or not
+</p>
+
+<button onclick="myFunction()">Try it</button><br>
+
+<p id="result"></p>
+
+<script>
+function myFunction() {
+  let value = prompt("Please enter something", "100");
+  if (isNaN(value)) {
+    document.getElementById("result").innerHTML ="There is NaN value";
+}
+else{
+    
+    document.getElementById("result").innerHTML ="There is not a NaN value";
+  }
+}
+</script>
+
+</body>
+</html>

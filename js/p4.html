@@ -1,0 +1,66 @@
+<html>
+    <body>
+
+            <label>Book name</label>
+            <input type="text" id="book">
+            <label>genre</label>
+            <input type="text" id="author">
+            <label>author</label>
+            <input type="text" id="genre">
+            <button onclick="v.add()">add</button>
+        <button onclick="v.finishCurrentBook()">Finish</button>
+        <h1 id="books"></h1>
+     <script>
+        class BookList{
+    constructor(){
+        this.books = []
+        this.nextBook = null
+        this.currentBook = null
+        this.lastBook =null
+    }
+
+    add(){
+        let x = new Book(document.getElementById('book').value,document.getElementById('author').value,document.getElementById('genre').value);
+        this.books.push(x)
+        if (this.books.length == 1){
+            document.getElementById("books").innerHTML= "Current Book "+document.getElementById('book').value;
+            this.currentBook = x;
+            console.log(this.currentBook.title)
+        }
+        if (this.books.length == 2){
+            this.nextBook = x;
+        }
+        
+          
+    }
+
+    finishCurrentBook() {
+        this.currentBook.read=true;
+        this.currentBook.Date= new Date(Date.now());
+        this.lastBook=this.currentBook;
+        if(this.books.indexOf(this.currentBook)===this.books.length-1){
+
+        }else{
+            this.nextBook = this.books[this.books.indexOf(this.currentBook)+1]
+            this.currentBook = this.nextBook;
+            document.getElementById("books").innerHTML= "Current Book "+this.currentBook.title;
+            
+        }
+    }
+
+}
+class Book{
+    constructor(title,author,genre){
+        this.title = title 
+        this.genre = genre 
+        this.author = author
+        this.read = false
+        this.readDate =  new Date(Date.now());
+    }
+}
+
+let v = new BookList();
+
+     </script>
+    </body>
+</html>

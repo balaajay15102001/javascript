@@ -1,0 +1,64 @@
+<html>
+    <body>
+        <script>
+            class properties{
+                constructor(name, tiredness, loneliness, hunger, happiness) {
+                    this.name = name;
+                    this.tiredness = tiredness;
+                    this.loneliness = loneliness;
+                    this.happiness = happiness;
+                    this.hunger = hunger;
+                }
+                feed(){
+                    this.tiredness+=1;
+                    this.hunger--;
+                }
+                sleep(){
+                    this.tiredness -= 1;
+                    this.happiness +=1;
+                }
+                pet(){
+                    this.happiness +=1;
+                    this.loneliness +=1;
+                }
+                status(){
+                    let tirednes=this.tiredness;
+                    let loneliness=this.loneliness;
+                    let hunger=this.hunger;
+                    let happiness=this.happiness;
+                    console.log(tirednes);
+                    let result;
+                    if(tirednes>5){
+                        result= name+"Your Pet is very Happy to feel goodness";
+                    }
+                    else if(tirednes<5){
+                        result= name+"Your Pet is really hungry and It want food";
+                    }
+                    else if(tirednes==0){
+                        result="Your Pet is so Tried :("
+                    }
+                  
+                    console.log(result);
+                    document.getElementById("res").innerHTML=result;
+                    }
+            }
+            function Cat(){
+            var name= document.getElementById("name").value;
+            console.log(name);
+            let tiredness = Math.floor(Math.random() * 10);
+            let hunger = Math.floor(Math.random() * 10);
+            let happiness = Math.floor(Math.random() * 10);
+            let loneliness = Math.floor(Math.random() * 10);
+            const cat=new properties(name,tiredness,loneliness,happiness,hunger);
+            cat.feed();
+            cat.sleep();
+            cat.pet();
+            cat.status();
+            }
+        </script>
+        <label>Enter your cat name:</label>
+        <input placeholder="Enter your pet name" id="name">
+        <button type="button" onclick="Cat()" id="properties">submit</button>
+        <p id="res"></p>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<body>
+
+<h1>Validate the Character</h1>
+
+<p>Click the button to check the value contains only Character or not
+</p>
+
+<button onclick="myFunction()">Try it</button><br>
+
+<p id="result"></p>
+
+<script>
+function myFunction() {
+  let value = prompt("Please enter Number");
+  const Regex = new RegExp(/^[A-Za-z\s]*$/);
+  if (Regex.test(value)==true) {
+    document.getElementById("result").innerHTML ="It is contains only Characters";
+}
+else{
+    
+    document.getElementById("result").innerHTML ="It is not contains only Character";
+  }
+}
+</script>
+
+</body>
+</html>

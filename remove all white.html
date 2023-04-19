@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Trim</title>
+</head>
+<body>
+    <script>
+        function func(){
+            var num=document.getElementById("trim").value;
+            document.getElementById("res").innerHTML=num.split(' ').join('');
+
+    }
+    </script>
+    <label>Enter the value</label> 
+    <input type="text" placeholder="enter the String" id="trim">
+    <button onclick="func()">submit</button>
+    <br>
+    <br>
+    <div style="border: 1px solid black; width: auto;">
+    
+    <h1>Remove all the white space</h1><p id="res"></p>
+</div>
+</body>
+</html>

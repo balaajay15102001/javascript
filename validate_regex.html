@@ -1,0 +1,28 @@
+<html>
+<body>
+
+<h1>Validate the Regex</h1>
+
+<p>Click the button to check the value ia Regex or not
+</p>
+
+<button onclick="myFunction()">Try it</button><br>
+
+<p id="result"></p>
+
+<script>
+function myFunction() {
+  let value = prompt("Please enter Number");
+  const Regex = new RegExp(/^[0-9]+$/);
+  if (Regex.test(value)==true) {
+    document.getElementById("result").innerHTML ="There is value used by regex";
+}
+else{
+    
+    document.getElementById("result").innerHTML ="It is not contain Regex";
+  }
+}
+</script>
+
+</body>
+</html>

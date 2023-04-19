@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Program to Check if a String contains a subString</h1>
+    <button onclick="func_num()">number Gen to get a range(1,10)</button><br><br>
+    <button onclick="func()">alpha Gen range(A,Z)</button><br><br>
+    <div style="border:1px solid black;width:auto;">
+        <h1 id="result"> </h1>
+    </div><br><br>
+    <div style="border:1px solid black;width:auto;">
+        <h1 id="alpha_result"> </h1>
+    </div>
+    <script>
+        function func_num(){
+           for(let i=1;i<=10;i++){
+            document.getElementById("result").innerHTML+=i+" ";
+           }
+        }
+        function func(){
+           for(let i=65;i<=90;i++){
+            document.getElementById("alpha_result").innerHTML+=String.fromCharCode(i)+" ";
+           }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+    <body>
+        <script>
+            function func(){
+                var num=document.getElementById("number").value;
+                if(num==""|| num=="null"){
+                    document.getElementById("res").innerHTML="<h1>The value is null/not null</h1>";
+                }
+                else{
+                    document.getElementById("res").innerHTML="<h1>The value is defined</h1>";
+                }
+                
+
+        }
+        </script>
+        <label>Enter the value</label> 
+        <input type="text" placeholder="enter the number" id="number">
+        <button onclick="func()">submit</button>
+        <br>
+        <br>
+        <div style="border: 1px solid black; width: 30%;">
+        
+        <h1>The Ascii value is:</h1><p id="res"></p>
+    </div>
+        
+    </body>
+</html>

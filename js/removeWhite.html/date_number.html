@@ -1,0 +1,25 @@
+<html>
+    <body>
+        <!-- The getTime() method returns the number of milliseconds from midnight of January 1, 1970 (EcmaScript epoch) to the specified date. -->
+        <script>
+            function func(){
+                const date = new Date();
+                console.log(date);
+                document.getElementById("current").innerHTML=date;
+
+                //convert into number
+                const num = new Date().getTime();
+                console.log(num); 
+                document.getElementById("num").innerHTML=num;
+        }
+        </script>
+        <div>
+            <h1>The current date is</h1><p id="current"></p>
+        </div>
+        <button onclick="func()">Click to get number</button>
+        <div>
+            <p id="num"></p>
+        </div>
+        
+    </body>
+</html>

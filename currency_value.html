@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <h2>The Indian value <span id="INR-value">1400</span> is:</h2>
+        <script>
+              var values = document.getElementById("INR-value").innerText;
+              console.log(values);
+              //Intl.NumberFormat constructor that comes with most browsers
+              // to format a number into a currency string.
+               var indian=new Intl.NumberFormat('en-IN',{
+                //style is set to 'currency' to format a number into a currency string.
+                    style:'currency',currency:'INR'
+               }).format(values);
+               document.write("<h1>"+indian+"</h1>");
+        </script>
+    </body>
+</html>

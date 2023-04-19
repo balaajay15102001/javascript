@@ -1,0 +1,24 @@
+<html>
+    <body>
+       <h1>Random String</h1>
+       <div style="border:1px solid black; width: auto;">
+            <h1 id="result"></h1>
+       </div> 
+       <br><br>
+       <label>Enter the number:</label>
+       <input type="number" id="number" size="15" >
+       <button onclick="func()">Submit</button>
+       <script>
+        function func(){
+            var gets=document.getElementById("number").value;
+            console.log(gets)
+            let generate=' ';
+            for (let index = 0; index < gets; index++) {
+               generate+=String.fromCharCode(97+Math.floor(Math.random()*26));
+            }
+            console.log(generate);
+            document.getElementById("result").innerHTML ="<h3>"+generate+"</h3>";
+        }
+       </script>
+    </body>
+</html>

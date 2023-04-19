@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Program to Check if a String Starts With Another String</h1>
+    <label>Enter the first String</label>
+    <input type="text" id="String1" size="15" placeholder="Enter something">&nbsp;&nbsp;
+    <label>Enter the Second String</label>
+    <input type="text" id="String2" size="15" placeholder="Enter something">
+    <button onclick="func()">submit</button><br><br>
+    <div style="border:1px solid black;width:auto;">
+        <h1 id="result"> </h1>
+    </div>
+    <script>
+        function func(){
+            var str1=document.getElementById("String1").value;
+           // console.log(str1);
+            var str2=document.getElementById("String2").value;
+            //console.log(str2);
+            var start_str1=str1.split(' ');
+            console.log(start_str1[0]);
+            var start_str2=str2.split(' ');
+            //console.log(start_str2);
+             if(start_str1[0]===start_str2[0]){
+                    document.getElementById("result").innerHTML="The Both Strings are Valid";
+             }
+             else{
+                document.getElementById("result").innerHTML="The Both Strings are not Valid";
+             }
+        }
+    </script>
+</body>
+</html>

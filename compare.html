@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Comparision of String</h1>
+    <label>Enter the String</label>
+    <input type="text" id="String1" size="15" placeholder="Enter something">&nbsp;&nbsp;<br><br>
+    <label>Enter the Sub String to check</label>
+    <input type="text" id="String2" size="15" placeholder="Enter something">
+    <button onclick="func()">submit</button><br><br>
+    <div style="border:1px solid black;width:auto;">
+        <h1 id="result"> </h1>
+    </div>
+    <script>
+        function func(){
+            var str1=document.getElementById("String1").value;
+            console.log(str1);
+            var str2=document.getElementById("String2").value;
+            console.log(str2);
+            // var res=str1.localeCompare(str2);
+            if(str1===str2){
+                document.getElementById("result").innerHTML="The Strings are Equal";
+            }
+            else{
+                document.getElementById("result").innerHTML="The Strings are not Equal"
+            }
+        }
+    </script>
+</body>
+</html>

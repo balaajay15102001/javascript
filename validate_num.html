@@ -1,0 +1,28 @@
+<html>
+<body>
+
+<h1>Validate the Number Value</h1>
+
+<p>Click the button to check the value contains only numbers or not
+</p>
+
+<button onclick="myFunction()">Try it</button><br>
+
+<p id="result"></p>
+
+<script>
+function myFunction() {
+  let value = prompt("Please enter Number");
+  const Regex = new RegExp(/^[0-9]+$/);
+  if (Regex.test(value)==true) {
+    document.getElementById("result").innerHTML ="It is contains only numbers";
+}
+else{
+    
+    document.getElementById("result").innerHTML ="It is not contains only numbers";
+  }
+}
+</script>
+
+</body>
+</html>

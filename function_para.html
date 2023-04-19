@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <script>
+            function func(e){
+                var sum=0;
+                for (let index = 0; index < e; index++) {
+                    sum+=index;   
+                }
+                document.getElementById("res").innerHTML=sum;
+        }
+        </script>
+        <button onclick="func(4)">click to get the sum of the numbers</button>
+        <div style="border: 1px solid black;">
+        <h1>The sum of the value of 4 is:</h1><p id="res"></p>
+    </div>
+        
+    </body>
+</html>
